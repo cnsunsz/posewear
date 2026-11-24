@@ -1,0 +1,14 @@
+{
+  "name": "posewear-app",
+  "private": true,
+  "version": "0.1.0",
+  "description": "衣姿 PoseWear 客户端（Tauri 2：Windows / Android）",
+  "license": "MIT",
+  "scripts": {
+    "www": "cd .. && python3 scripts/build-app.py app/www",
+    "tauri": "tauri"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.9.0"
+  }
+}

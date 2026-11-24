@@ -38,9 +38,19 @@ Pose, outfit and portrait reference galleries with bilingual prompts, plus a bri
 | OpenAI | API key (gpt-image requires a verified org) | gpt-image-1 | images/edits with multiple references; strictest moderation |
 | Gemini | Google AI Studio key | gemini-2.5-flash-image | a.k.a. Nano Banana |
 | Doubao Seedream | Volcengine Ark key | doubao-seedream-4-0-250828 | routed through the site proxy by default for CORS |
+| xAI Grok | API key from console.x.ai (billed per image; unrelated to SuperGrok / Premium quota) | grok-imagine-image-2.0 | images/generations + images/edits (JSON, up to 5 references) |
+| Qwen-Image | Alibaba Cloud Model Studio (DashScope) key | qwen-image-2.0 | multimodal-generation endpoint, generation and editing in one, up to 3 references |
+| Grok membership (web cookie) | your own grok.com login cookie | imagine-image-edit | **Unofficial, at your own risk**: desktop/Android app only, uses your subscription quota, may break or get the account restricted; modelled on open-source grok2api, untested with a real account |
+| Prompt helper: DeepSeek / Xiaomi MiMo | their API keys | deepseek-flash / mimo-v2.6-flash | neither offers an image-generation API, so they only polish prompts |
 | Custom relay | Base URL, key and model | any | OpenAI-compatible (edits / generations) or the Gemini protocol (`models/:generateContent`); the proxy toggle applies to relays too — unticked means direct connections, and relay endpoints may use any port |
 
 ## Changelog
+
+### 2026-11-24 · App v0.1.0 (Windows / Android)
+
+- New Tauri 2 app (`app/`): Windows installers (.exe / .msi) and an Android APK, built by GitHub Actions (`.github/workflows/app.yml`) on `v*` tags and attached to the Release. Library data ships offline; images load from the CDN; API calls use native HTTP, no proxy needed.
+- New providers: xAI Grok (official API), Qwen-Image, and an optional unofficial "Grok membership (web cookie)" channel; keys are stored per provider on the device.
+- New prompt helper using DeepSeek or Xiaomi MiMo (neither has an image API).
 
 ### 2026-11-23 · v1.2.1
 

@@ -38,9 +38,19 @@
 | OpenAI | API キー（gpt-image には認証済みの組織が必要） | gpt-image-1 | 複数のリファレンスを使う images/edits。モデレーションが最も厳格 |
 | Gemini | Google AI Studio のキー | gemini-2.5-flash-image | 別名 Nano Banana |
 | Doubao Seedream | Volcengine Ark のキー | doubao-seedream-4-0-250828 | CORS のため既定でサイトのプロキシ経由 |
+| xAI Grok | console.x.ai の API キー（画像ごとの課金。SuperGrok / Premium の枠とは無関係） | grok-imagine-image-2.0 | images/generations + images/edits（JSON、参照画像は最大 5 枚） |
+| Qwen-Image | Alibaba Cloud Model Studio（DashScope）のキー | qwen-image-2.0 | multimodal-generation エンドポイント、生成と編集を統合、参照画像は最大 3 枚 |
+| Grok 会員（Web Cookie） | 自分の grok.com ログイン Cookie | imagine-image-edit | **非公式・自己責任**：アプリ版のみ、会員枠を消費、予告なく動かなくなったりアカウントが制限される恐れあり。grok2api を参考に実装、実アカウントでは未検証 |
+| プロンプト補助 DeepSeek / Xiaomi MiMo | 各社の API キー | deepseek-flash / mimo-v2.6-flash | どちらも画像生成 API がないため、プロンプトの推敲のみ |
 | Custom relay | ベース URL、キー、モデル | 任意 | OpenAI 互換（edits / generations）または Gemini プロトコル（`models/:generateContent`）。プロキシのトグルはリレーにも適用され、オフの場合は直接接続、リレーのエンドポイントは任意のポートを使用可能 |
 
 ## 変更履歴
+
+### 2026-11-24 · アプリ v0.1.0（Windows / Android）
+
+- Tauri 2 アプリ（`app/`）を追加：Windows インストーラー（.exe / .msi）と Android APK を GitHub Actions（`.github/workflows/app.yml`）が `v*` タグで自動ビルドし Release に添付。素材データはオフライン同梱、画像は CDN から読み込み、API 呼び出しはネイティブ HTTP のためプロキシ不要。
+- 新プロバイダー：xAI Grok（公式 API）、Qwen-Image、任意の非公式「Grok 会員（Web Cookie）」チャネル。キーはプロバイダーごとに端末内へ保存。
+- DeepSeek / Xiaomi MiMo によるプロンプト補助を追加（両社とも画像 API なし）。
 
 ### 2026-11-23 · v1.2.1
 

@@ -50,9 +50,20 @@
 | OpenAI | API Key（gpt-image 需已验证组织） | gpt-image-1 | 走 images/edits，多张参考图；安全审核最严 |
 | Gemini | Google AI Studio 的 API Key | gemini-2.5-flash-image | 即 Nano Banana |
 | 豆包 Seedream | 火山方舟 API Key | doubao-seedream-4-0-250828 | 国内直连，默认经本站代理以解决跨域 |
+| xAI Grok | console.x.ai 的 API Key（按张计费，与 SuperGrok / Premium 会员额度无关） | grok-imagine-image-2.0 | images/generations + images/edits（JSON，最多 5 张参考图） |
+| 千问 Qwen-Image | 阿里云百炼（DashScope）API Key | qwen-image-2.0 | multimodal-generation 接口，生图与编辑合一，最多 3 张参考图；网页版经本站代理 |
+| Grok 会员（网页 Cookie） | 你自己 grok.com 的登录 Cookie | imagine-image-edit | **非官方、风险自负**：仅客户端可用，消耗会员额度，可能随时失效或导致账号受限；协议参照开源 grok2api，未经真实账号验证 |
+| 提示词助手 DeepSeek / 小米 MiMo | 各自平台的 API Key | deepseek-flash / mimo-v2.6-flash | 两家官方 API 都没有生图接口，只用来「AI 润色」提示词 |
 | 自定义中转 | Base URL + Key + 模型名 | 自填 | OpenAI 兼容（edits / generations）或 Gemini 协议（`models/:generateContent`）；代理开关对中转同样生效，未勾选时代理直连，中转地址可用任意端口 |
 
 ## 更新日志
+
+### 2026-11-24 · 客户端 v0.1.0（Windows / Android）
+
+- 新增 Tauri 2 客户端（`app/`）：Windows 安装包（.exe / .msi）与安卓 APK，由 GitHub Actions（`.github/workflows/app.yml`）在打 `v*` 标签时构建并发布到 Release。素材数据随包离线，图片从线上图床加载；客户端请求走原生 HTTP，无需本站代理。
+- 新增服务商：xAI Grok（官方 API）、千问 Qwen-Image（百炼）、可选的「Grok 会员（网页 Cookie）」非官方通道；每家服务商的密钥分别保存在本机。
+- 新增「提示词助手」：可用 DeepSeek 或小米 MiMo 润色提示词（两家没有生图 API）。
+- 客户端前端由 `scripts/build-app.py` 组装；新增回归 `tests/v19-providers.js`。
 
 ### 2026-11-23 · v1.2.1
 

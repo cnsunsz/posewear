@@ -206,7 +206,7 @@ textarea{width:100%;font:13.5px/1.7 var(--sans);color:var(--tx);background:var(-
 .pk-g button{flex-direction:column;align-items:stretch;padding:0;background:transparent;gap:6px;text-align:left;border-radius:0}.pk-g img{aspect-ratio:3/4;object-fit:cover;background:var(--ph);width:100%;border-radius:12px;transition:box-shadow .15s}.pk-g button.pose img{object-fit:contain;background:var(--phw);mix-blend-mode:multiply}
 .pk-g button:hover img{box-shadow:0 0 0 2px var(--line2)}.pk-g button.on img{box-shadow:0 0 0 3px var(--ac)}.pk-g span{font-size:12px;font-weight:400;color:var(--tx2);overflow:hidden;text-overflow:ellipsis}.pk-g button.on span{color:var(--ac);font-weight:600}
 .cfg-b{padding:4px 24px 20px;overflow:auto;display:flex;flex-direction:column;gap:14px}
-.prov{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.prov label{cursor:pointer}.prov input{position:absolute;opacity:0}
+.prov{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.prov label{cursor:pointer}.prov input{position:absolute;opacity:0}
 .prov span{display:block;background:var(--sf);border:2px solid transparent;padding:12px;border-radius:14px;height:100%;transition:.2s}.prov b{display:block;font-size:14px;font-weight:700}.prov small{font-size:11.5px;color:var(--mu)}
 .prov input:checked+span{border-color:var(--tx);background:var(--bg2)}.prov input:focus-visible+span{outline:2px solid var(--ac)}
 .fld{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:var(--tx)}
