@@ -107,7 +107,7 @@ jobs:
       - uses: softprops/action-gh-release@v2
         with:
           name: 衣姿 PoseWear 客户端 ${{ github.ref_name }}
-          files: dist-app/*
+          files: dist-app/**/*
           body: |
             Windows 安装包（.exe 为 NSIS 安装程序，.msi 为 Windows Installer）与安卓 APK。
 
